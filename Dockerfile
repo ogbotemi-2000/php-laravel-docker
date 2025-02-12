@@ -10,7 +10,7 @@ WORKDIR /var/www/html/
 # COPY composer.json composer.lock ./
 COPY . /var/www/html
 
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+CMD bash -c "composer install --no-dev --optimize-autoloader --no-interaction"
 RUN chown -R www-data:www-data /var/www/html/storage
 
 COPY . .
