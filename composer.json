@@ -8,37 +8,16 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
-        "barryvdh/laravel-ide-helper": "^3.2",
-        "envatic/crud-strap": "^5.0",
-        "envatic/laravel-vue-i18n-generator": "^0.1.70",
-        "inertiajs/inertia-laravel": "^1.0",
-        "kkomelin/laravel-translatable-string-exporter": "^1.22",
-        "kornrunner/ethereum-util": "^0.1.0",
-        "kornrunner/secp256k1": "^0.3.0",
-        "laravel/framework": "^11.31",
-        "laravel/reverb": "^1.0",
-        "laravel/sanctum": "^4.0",
-        "laravel/tinker": "^2.9",
-        "league/flysystem-aws-s3-v3": "^3.0",
-        "mailersend/laravel-driver": "^2.7",
-        "resend/resend-php": "^0.14.0",
-        "simplito/elliptic-php": "^1.0",
-        "sopamo/laravel-filepond": "^1.4",
-        "symfony/http-client": "^7.2",
-        "symfony/mailgun-mailer": "^7.1",
-        "symfony/postmark-mailer": "^7.1",
-        "tightenco/ziggy": "^2.0"
+        "php": "^8.0",
+        "laravel/framework": "^11.0",
+        "laravel/tinker": "^2.9"
     },
     "require-dev": {
+        "filp/whoops": "^2.15",
         "fakerphp/faker": "^1.23",
-        "laravel/breeze": "^2.2",
-        "laravel/pail": "^1.1",
-        "laravel/pint": "^1.13",
-        "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.1",
-        "phpunit/phpunit": "^11.0.1"
+        "phpunit/phpunit": "^11.0"
     },
     "config": {
         "optimize-autoloader": true,
