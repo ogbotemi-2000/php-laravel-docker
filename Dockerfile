@@ -10,7 +10,10 @@ WORKDIR /var/www/html/
 # COPY composer.json composer.lock ./
 COPY . /var/www/html
 
-CMD bash -c "composer install --no-dev --optimize-autoloader --no-interaction"
+# Allow composer to run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
+
+composer install --no-dev --optimize-autoloader --no-interaction
 RUN chown -R www-data:www-data /var/www/html/storage
 
 COPY . .
