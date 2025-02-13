@@ -20,6 +20,9 @@ COPY . .
 RUN chmod +x artisan
 RUN chown -R www-data:www-data /var/www/html/storage
 
-RUN composer dump-autoload --optimize && composer run-script post-install-cmd
+# RUN composer dump-autoload --optimize && composer run-script post-install-cmd
+
+RUN composer --version
+
 
 CMD ["php", "-S", "0.0.0.0:8080"]
