@@ -7,10 +7,10 @@ ENV PATH="$PATH:/usr/local/bin"
 
 WORKDIR /var/www/html/
 
-COPY composer.json composer.lock ./
 COPY . /var/www/html
+COPY composer.json composer.lock ./
 
-# Allow composer to run as root
+
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 RUN composer install --no-dev --optimize-autoloader --no-interaction
