@@ -1,19 +1,20 @@
-FROM php:7.4-fpm-alpine
-
-RUN apk update && apk add --no-cache git
-
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-ENV PATH="$PATH:/usr/local/bin"
-
-WORKDIR /var/www/html/
-
-COPY . /var/www/html
+FROM richarvey/nginx-php-fpm:3.1.6
 
 COPY . .
 
-RUN chmod +x artisan
-RUN chown -R www-data:www-data /var/www/html/storage
+# Image config
+ENV SKIP_COMPOSER 1
+ENV WEBROOT /var/www/html/public
+ENV PHP_ERRORS_STDERR 1
+ENV RUN_SCRIPTS 1
+ENV REAL_IP_HEADER 1
 
-RUN composer dump-autoload --optimize && composer run-script post-install-cmd
+# Laravel config
+ENV APP_ENV production
+ENV APP_DEBUG false
+ENV LOG_CHANNEL stderr
 
-CMD ["php", "-S", "0.0.0.0:8080"]
+# Allow composer to run as root
+ENV COMPOSER_ALLOW_SUPERUSER 1
+
+CMD ["/start.sh"]
